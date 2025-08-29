@@ -1,44 +1,55 @@
 package collection;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Vector;
 
 public class VectorDemo {
 
     public static void main(String[] args) {
-        Integer[] values = {20,45,25};
 
-        // creating new vector
-        Vector<Integer> marks = new Vector();
-        //inserting values into vector
-        marks.add(200);
-        marks.add(1, 450);
-        marks.add(1, 220);
-        // inserting an array to vector
-        Collections.addAll(marks,values);
+        Object[] morenames = {"Rahul","Virat",20};
+
+
+        // create a vector
+        Vector names = new Vector();
+
+
+        // insert operation
+        names.add(20);
+        names.add("ananta");
+        names.add(true);
+
+        // bulk insert
+        names.addAll(Arrays.asList(morenames));
 
         // update
-        marks.set(2,45);
+        names.set(2,100);
 
-        // remove by value
-        marks.remove(Integer.valueOf(200));
-        // remove by index
-        marks.remove(3);
-        // remove all
-       // marks.clear();
-        // check if vector is empty
-        marks.isEmpty();
+        //search for a value
+        System.out.println("search result:"+names.contains("Ananta"));
 
-        // to get index of value
-        marks.indexOf(Integer.valueOf(220));
-        //traversal
-        for (int i = 0; i < marks.size(); i++) {
-            // read by index
-            System.out.println(marks.get(i));
+        // search and get index
+        System.out.println("index result:"+names.indexOf(20));
+
+        // search and get index
+        System.out.println("last index result:"+names.lastIndexOf(20));
+
+        // clear collection or empty collection
+       // names.clear();
+
+        //specific delete either by value or by index
+        System.out.println( "delete operation by value :"+names.remove("ananta"));
+
+        System.out.println( "delete operation by index :"+names.remove(3));
+
+        // read by index
+        System.out.println( "read operation by index :"+names.get(3));
+        // traversal
+        for(Object obj:names){
+            System.out.println(obj);
         }
 
 
-        }
     }
+}
